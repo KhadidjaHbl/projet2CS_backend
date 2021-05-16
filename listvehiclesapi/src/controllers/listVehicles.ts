@@ -55,10 +55,10 @@ export const get = (_req: Request, res: Response) => {
 
 //get All vehicles
 export async function getV(req: Request, res: Response) {
-   const page=Number(req.query.page || "0")
-   // const page=0
-   // const limit=2
-    const limit=Number(req.query.limit)
+    const page=Number(req.query.page || "0")
+    //const page=0
+    //const limit=2
+    const limit=Number(req.query.limit || "8")
     const vehicles = await getManager()
     .createQueryBuilder()
     .select("vehicle.unitpriceperday")
